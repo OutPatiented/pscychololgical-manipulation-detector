@@ -1,0 +1,90 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: 250 15% 98%; /* #FAFAFA */
+  --foreground: 222 16% 13%; /* #212121 */
+  --muted: 210 11% 98%; /* #F5F7FA */
+  --muted-foreground: 210 6% 46%; /* #757575 */
+  --popover: 0 0% 100%;
+  --popover-foreground: 222 16% 13%;
+  --card: 0 0% 100%;
+  --card-foreground: 222 16% 13%;
+  --border: 210 13% 90%; /* #E2E8F0 */
+  --input: 210 13% 90%;
+  --primary: 207 90% 54%; /* #1976D2 */
+  --primary-foreground: 211 100% 99%;
+  --secondary: 120 43% 42%; /* #388E3C */
+  --secondary-foreground: 120 100% 99%;
+  --accent: 210 11% 98%;
+  --accent-foreground: 222 16% 13%;
+  --destructive: 0 84% 60%; /* #D32F2F */
+  --destructive-foreground: 0 100% 99%;
+  --ring: 207 90% 54%;
+  --radius: 0.5rem;
+}
+
+.dark {
+  --background: 222 16% 9%; /* #17191C */
+  --foreground: 210 11% 96%; /* #F1F5F9 */
+  --muted: 222 16% 15%; /* #2A2D32 */
+  --muted-foreground: 210 6% 64%; /* #9CA3AF */
+  --popover: 222 16% 11%; /* #1E2024 */
+  --popover-foreground: 210 11% 96%;
+  --card: 222 16% 11%; /* #1E2024 */
+  --card-foreground: 210 11% 96%;
+  --border: 222 16% 20%; /* #363A42 */
+  --input: 222 16% 20%;
+  --primary: 207 90% 54%; /* #1976D2 */
+  --primary-foreground: 211 100% 99%;
+  --secondary: 120 43% 42%; /* #388E3C */
+  --secondary-foreground: 120 100% 99%;
+  --accent: 222 16% 15%;
+  --accent-foreground: 210 11% 96%;
+  --destructive: 0 84% 60%; /* #D32F2F */
+  --destructive-foreground: 0 100% 99%;
+  --ring: 207 90% 54%;
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply font-sans antialiased bg-background text-foreground;
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  }
+}
+
+/* Custom scrollbar for dark mode compatibility */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: hsl(var(--muted));
+}
+
+::-webkit-scrollbar-thumb {
+  background: hsl(var(--border));
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: hsl(var(--muted-foreground));
+}
+
+/* Ensure proper focus visibility */
+.focus\:ring-2:focus {
+  --tw-ring-offset-shadow: var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color);
+  --tw-ring-shadow: var(--tw-ring-inset) 0 0 0 calc(2px + var(--tw-ring-offset-width)) var(--tw-ring-color);
+  box-shadow: var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow, 0 0 #0000);
+}
